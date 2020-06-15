@@ -24,8 +24,8 @@ def pull_invoice():#reset it to the last 5 sales
                     "filter": {
                         "date_time_filter": {
                             "created_at": {
-                                "start_at": (dt.datetime.today() - dt.timedelta(days=1)),
-                                "end_at": dt.datetime.today()
+                                "start_at": [ (dt.datetime.today() - dt.timedelta(days=1)), dt.datetime.today()],
+                                # "end_at": dt.datetime.today()
         }}}}})})
     df = pd.DataFrame(result.body)
     return df.head(5)
